@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Osiris Labs Profile Card</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background-color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    .logo {
+      width: 80px;
+      margin-bottom: 16px;
+    }
+    .outer-card {
+      background-color: #d0f0fd;
+      border-radius: 24px;
+      padding: 8px;
+      width: 336px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .card {
+      background-color: #bae6fd;
+      border-radius: 20px;
+      width: 100%;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+    }
+    .profile-img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 16px;
+    }
+    .info { margin-bottom: 16px; text-align: center; }
+    .name-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+    .name {
+      font-size: 20px;
+      color: #0f172a;
+      font-weight: 600;
+    }
+    .title {
+      font-size: 14px;
+      color: #475569;
+      margin-bottom: 12px;
+    }
+    .description {
+      font-size: 13px;
+      color: #475569;
+      line-height: 1.4;
+    }
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin: 16px 0;
+    }
+    .social-icons img,
+    .follow-icons img {
+      width: 24px;
+      height: 24px;
+      border-radius: 6px;
+      object-fit: cover;
+    }
+    .follow-cta {
+      font-size: 14px;
+      font-weight: 600;
+      color: #0f172a;
+      margin: 8px 0;
+      text-align: center;
+    }
+    .follow-icons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .action-buttons {
+      background-color: #bae6fd;
+      border-radius: 16px;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+      margin-top: 12px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    }
+    .action-buttons a {
+      flex: 1;
+      text-align: center;
+      padding: 12px 0;
+      background-color: #38bdf8;
+      color: #ffffff;
+      border-radius: 10px;
+      font-size: 14px;
+      text-decoration: none;
+      transition: background-color 0.2s;
+    }
+    .action-buttons a:hover {
+      background-color: #0ea5e9;
+    }
+  </style>
+</head>
+<body>
+  <!-- Floating logo -->
+  <img src="https://sandybrown-ant-159541.hostingersite.com/wp-content/uploads/2025/09/SVG-to-PNG-Asset-9.png" alt="Osiris Labs Logo" class="logo">
+
+  <div class="outer-card">
+    <div class="card">
+      <img src="https://sandybrown-ant-159541.hostingersite.com/wp-content/uploads/2025/09/Profile-Picture-Preview.jpg" alt="Profile" class="profile-img">
+      <div class="info">
+        <div class="name-row">
+          <div class="name">Youssef SalahEldin</div>
+        </div>
+        <div class="title">Co-Founder, Marketing Director &amp; AI Automations Specialist</div>
+        <div class="description">
+          10+ years of experience building systems-first marketing strategies across digital, offline, and experiential.
+        </div>
+      </div>
+
+      <div class="social-icons">
+        <a href="#"><img src="https://sandybrown-ant-159541.hostingersite.com/wp-content/uploads/2025/08/ChatGPT-Image-Aug-3-2025-03_00_47-PM.png" alt="LinkedIn"></a>
+        <a href="#"><img src="https://sandybrown-ant-159541.hostingersite.com/wp-content/uploads/2025/08/ChatGPT-Image-Aug-3-2025-03_42_00-PM.png" alt="Behance"></a>
+        <a href="https://cal.theosirislabs.com/youssef/30min"><img src="https://sandybrown-ant-159541.hostingersite.com/wp-content/uploads/2025/08/ChatGPT-Image-Aug-3-2025-03_40_54-PM.png" alt="Schedule Meeting"></a>
+      </div>
+
+      <div class="follow-cta">Follow Our Company</div>
+      <div class="follow-icons">
+        <a href="https://www.linkedin.com/company/theosirislabs/?_l=en_US"><img src="https://sandybrown-ant-159541.hostingersite.com/wp-content/uploads/2025/08/ChatGPT-Image-Aug-3-2025-02_59_53-PM.png" alt="LinkedIn"></a>
+        <a href="https://www.instagram.com/theosirislabs/"><img src="https://sandybrown-ant-159541.hostingersite.com/wp-content/uploads/2025/08/ChatGPT-Image-Aug-3-2025-03_00_47-PM.png" alt="Instagram"></a>
+        <a href="https://www.theosirislabs.com/"><img src="https://sandybrown-ant-159541.hostingersite.com/wp-content/uploads/2025/08/ChatGPT-Image-Aug-3-2025-03_05_11-PM.png" alt="Website"></a>
+      </div>
+
+      <!-- Unified action buttons inside styled container -->
+      <div class="action-buttons">
+        <a href="mailto:youssef.sala7@gmail.com">Email</a>
+        <a href="https://cal.theosirislabs.com/youssef/30min">Book a Call</a>
+        <a href="https://sandybrown-ant-159541.hostingersite.com/youssef.vcf" download="YoussefSalahEldin.vcf">Save Contact</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
