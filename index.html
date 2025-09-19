@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Osiris Labs Digital Business Card</title>
+  <title>Youssef SalahEldin Digital Business Card</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -16,168 +16,166 @@
       min-height: 100vh;
       font-family: Arial, sans-serif;
       padding: 20px;
+      color: #0f172a;
     }
+
+    /* ===== Card Frames (kept) ===== */
     .outer-card {
-      background-color: #d0f0fd;
+      background-color: #d0f0fd;               /* your top frame color */
       border-radius: 24px;
       padding: 8px;
       width: 336px;
       display: flex;
       flex-direction: column;
       align-items: center;
+      border: 1px solid rgba(56,189,248,0.24);
+      /* subtle, visible pulse */
+      animation: framePulse 12s ease-in-out infinite;
+      will-change: border-color, box-shadow;
     }
     .card {
       background: linear-gradient(to bottom, #f0faff, #bae6fd 50%, #f0faff);
       border-radius: 20px;
       width: 100%;
-      padding: 24px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      padding: 22px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
       display: flex;
       flex-direction: column;
       align-items: center;
     }
+
+    /* ===== Header ===== */
     .header {
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-bottom: 20px;
+      margin-bottom: 14px;
     }
     .logo {
-      width: 80px;
-      margin-bottom: 16px;
+      width: 72px;
+      margin-bottom: 12px;
     }
     .profile-img {
-      width: 235px;
-      height: 235px;
+      width: 220px;
+      height: 220px;
       border-radius: 16px;
       object-fit: cover;
-      margin-bottom: 16px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      margin-bottom: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       border: 3px solid #ffffff;
     }
     .name {
-      font-size: 26px;
-      color: #0f172a;
+      font-size: 24px;
       font-weight: 700;
-      margin-bottom: 8px;
       text-align: center;
+      margin-bottom: 6px;
       background: linear-gradient(to right, #0f172a, #475569);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-    .title {
-      font-size: 18px;
-      color: #475569;
-      font-weight: 500;
-      text-align: center;
-      margin-bottom: 12px;
-      padding: 6px 16px;
-      background-color: rgba(56, 189, 248, 0.08);
-      border-radius: 16px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-      line-height: 1.4;
-    }
+    /* exact role formatting */
+    .role { text-align: center; line-height: 1.35; margin-bottom: 12px; }
+    .role .line1 { font-size: 16px; font-weight: 700; color:#0f172a; }
+    .role .line2 { font-size: 14px; font-weight: 600; color:#475569; }
+
+    /* ===== Value line ===== */
     .description {
-      font-size: 15px;
+      font-size: 14.5px;
       color: #475569;
-      line-height: 1.6;
+      line-height: 1.55;
       text-align: center;
-      margin-bottom: 24px;
+      margin-bottom: 14px;
       max-width: 280px;
-      padding: 12px;
-      background-color: rgba(255, 255, 255, 0.7);
+      padding: 10px 12px;
+      background-color: rgba(255,255,255,0.7);
       border-radius: 12px;
-      box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.05);
-      transition: transform 0.3s ease;
+      box-shadow: inset 0 2px 6px rgba(0,0,0,0.05);
     }
-    .description:hover {
-      transform: scale(1.02);
-    }
+
     .divider {
       width: 100%;
       height: 1px;
-      background-color: rgba(71, 85, 105, 0.2);
-      margin: 16px 0;
+      background-color: rgba(71,85,105,0.18);
+      margin: 14px 0;
     }
-    .skills {
-      margin-bottom: 24px;
-      width: 100%;
-    }
-    .skills-title {
-      font-size: 15px;
-      color: #0f172a;
-      font-weight: 600;
-      margin-bottom: 12px;
-      text-align: center;
-    }
-    .skills-list {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-    }
-    .skill {
-      background-color: rgba(56, 189, 248, 0.1);
-      color: #0f172a;
-      padding: 6px 14px;
-      border-radius: 20px;
-      font-size: 13px;
-      font-weight: 500;
-      border: 1px solid rgba(56, 189, 248, 0.3);
-      animation: subtle-stroke 8s ease-in-out infinite;
-    }
-    @keyframes subtle-stroke {
-      0%, 100% { border-color: rgba(56, 189, 248, 0.3); box-shadow: 0 0 2px rgba(56, 189, 248, 0.1); }
-      50% { border-color: rgba(56, 189, 248, 0.4); box-shadow: 0 0 4px rgba(56, 189, 248, 0.15); }
-    }
-    .social-section {
-      margin-bottom: 24px;
-      width: 100%;
-    }
-    .section-cta {
-      font-size: 15px;
-      font-weight: 600;
-      color: #0f172a;
-      margin-bottom: 12px;
-      text-align: center;
-    }
-    .icons {
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-    }
-    .icons a {
-      display: inline-block;
-      transition: transform 0.2s;
-    }
-    .icons a:hover {
-      transform: scale(1.1);
-    }
-    .icons img {
-      width: 28px;
-      height: 28px;
-      border-radius: 8px;
-      object-fit: cover;
-    }
-    .action-buttons {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      width: 100%;
-    }
-    .action-buttons a {
-      text-align: center;
+
+    /* ===== Primary CTA ===== */
+    .primary-actions { width: 100%; margin-bottom: 6px; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      gap: 8px; width: 100%;
       padding: 14px 0;
       background-color: #38bdf8;
       color: #ffffff;
       border-radius: 12px;
-      font-size: 15px;
+      font-size: 15px; font-weight: 700;
       text-decoration: none;
-      transition: background-color 0.2s, box-shadow 0.2s;
+      transition: background-color 0.2s, box-shadow 0.2s, transform 0.15s;
     }
-    .action-buttons a:hover {
-      background-color: #0ea5e9;
-      box-shadow: 0 2px 8px rgba(14, 165, 233, 0.3);
+    .btn:hover { background-color: #0ea5e9; box-shadow: 0 2px 8px rgba(14,165,233,0.28); transform: translateY(-1px); }
+    .btn svg { width: 18px; height: 18px; fill: currentColor; }
+
+    /* ===== Skills with subtle animated stroke ===== */
+    .skills { width: 100%; margin-bottom: 10px; }
+    .skills-title {
+      font-size: 14px; color:#0f172a; font-weight:700; text-align:center; margin-bottom: 10px;
+    }
+    .skills-list {
+      display:flex; flex-wrap:wrap; justify-content:center; gap:8px;
+    }
+    .skill {
+      background-color: rgba(56,189,248,0.10);
+      color:#0f172a;
+      padding: 6px 12px;
+      border-radius: 18px;
+      font-size: 12.5px; font-weight:600;
+      border: 1px solid rgba(56,189,248,0.26);
+      /* slower, visible but gentle */
+      animation: chipPulse 18s ease-in-out infinite;
+      will-change: border-color, box-shadow;
+    }
+    /* desynchronize pulses a bit */
+    .skill:nth-child(2) { animation-delay: 3s; }
+    .skill:nth-child(3) { animation-delay: 6s; }
+    .skill:nth-child(4) { animation-delay: 9s; }
+    .skill:nth-child(5) { animation-delay: 12s; }
+
+    /* ===== Socials ===== */
+    .social-section { width:100%; margin-bottom: 10px; }
+    .section-cta {
+      font-size: 14px; font-weight:700; color:#0f172a; text-align:center; margin-bottom:10px;
+    }
+    .icons { display:flex; justify-content:center; gap:14px; }
+    .icons a { display:inline-block; transition: transform 0.2s; }
+    .icons a:hover { transform: scale(1.06); }
+    .icons img { width:26px; height:26px; border-radius:8px; object-fit:cover; }
+
+    /* ===== Secondary CTAs ===== */
+    .secondary-actions {
+      display:grid; grid-template-columns: 1fr 1fr;
+      gap:10px; width:100%; margin-top: 6px;
+    }
+
+    /* ===== Footer ===== */
+    .footer { margin-top: 8px; font-size: 11.5px; color:#475569; text-align:center; }
+
+    /* ===== Animations ===== */
+    @keyframes framePulse {
+      0%   { border-color: rgba(56,189,248,0.22); box-shadow: 0 0 0 rgba(56,189,248,0); }
+      50%  { border-color: rgba(56,189,248,0.32); box-shadow: 0 0 8px rgba(56,189,248,0.12); }
+      100% { border-color: rgba(56,189,248,0.22); box-shadow: 0 0 0 rgba(56,189,248,0); }
+    }
+    @keyframes chipPulse {
+      0%   { border-color: rgba(56,189,248,0.26); box-shadow: 0 0 0 rgba(56,189,248,0); }
+      50%  { border-color: rgba(56,189,248,0.36); box-shadow: 0 0 4px rgba(56,189,248,0.12); }
+      100% { border-color: rgba(56,189,248,0.26); box-shadow: 0 0 0 rgba(56,189,248,0); }
+    }
+
+    /* If a user prefers reduced motion, keep animations but slow them further instead of disabling
+       (so they still see something subtle, per your request). */
+    @media (prefers-reduced-motion: reduce) {
+      .outer-card { animation-duration: 18s; }
+      .skill { animation-duration: 26s; }
     }
   </style>
 </head>
@@ -186,46 +184,90 @@
     <div class="card">
       <div class="header">
         <img src="https://sandybrown-ant-159541.hostingersite.com/wp-content/uploads/2025/09/SVG-to-PNG-Asset-9.png" alt="Osiris Labs Logo" class="logo">
-        <img src="https://sandybrown-ant-159541.hostingersite.com/wp-content/uploads/2025/09/Profile-Picture-Preview.jpg" alt="Profile" class="profile-img">
+        <img src="https://sandybrown-ant-159541.hostingersite.com/wp-content/uploads/2025/09/Profile-Picture-Preview.jpg" alt="Youssef SalahEldin" class="profile-img">
         <div class="name">Youssef SalahEldin</div>
-        <div class="title">CEO & Marketing Director<br>The Osiris Labs</div>
+        <div class="role">
+          <div class="line1">CEO &amp; Marketing Director</div>
+          <div class="line2">The Osiris Labs</div>
+        </div>
       </div>
+
       <div class="description">
-        Visionary leader with over a decade of expertise in developing AI-integrated marketing frameworks that drive measurable, long-term business expansion through innovative digital, offline, and experiential strategies.
+        I design and deploy AI-driven marketing systems that help brands move faster, smarter, and scale with compounding results.
       </div>
+
+      <!-- Primary CTA -->
+      <div class="primary-actions">
+        <a class="btn" href="https://cal.theosirislabs.com/youssef/30min" aria-label="Schedule a call with Youssef">
+          <!-- calendar svg -->
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7 2a1 1 0 0 1 1 1v1h8V3a1 1 0 1 1 2 0v1h1a2 2 0 0 1 2 2v3H3V6a2 2 0 0 1 2-2h1V3a1 1 0 0 1 1-1Zm14 9H3v7a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7Z"/>
+          </svg>
+          Schedule a Call
+        </a>
+      </div>
+
       <div class="divider"></div>
+
       <div class="skills">
         <div class="skills-title">Core Competencies</div>
         <div class="skills-list">
           <div class="skill">AI Automation</div>
-          <div class="skill">Strategic Branding</div>
-          <div class="skill">Content Optimization</div>
-          <div class="skill">CRM Solutions</div>
-          <div class="skill">Event Design</div>
+          <div class="skill">Systems Thinking</div>
+          <div class="skill">Growth Strategy</div>
+          <div class="skill">Creative Direction</div>
+          <div class="skill">Marketing Infrastructure</div>
         </div>
       </div>
+
       <div class="divider"></div>
+
       <div class="social-section">
         <div class="section-cta">Connect Personally</div>
         <div class="icons">
-          <a href="https://www.linkedin.com/in/youssefsala7"><img src="https://sandybrown-ant-159541.hostingersite.com/wp-content/uploads/2025/08/ChatGPT-Image-Aug-3-2025-02_59_53-PM.png" alt="LinkedIn"></a>
-          <a href="https://www.instagram.com/youssef.sala7"><img src="https://sandybrown-ant-159541.hostingersite.com/wp-content/uploads/2025/08/ChatGPT-Image-Aug-3-2025-03_00_47-PM.png" alt="Instagram"></a>
-          <a href="https://cal.theosirislabs.com/youssef/30min"><img src="https://sandybrown-ant-159541.hostingersite.com/wp-content/uploads/2025/08/ChatGPT-Image-Aug-3-2025-03_40_54-PM.png" alt="Schedule Meeting"></a>
+          <a href="https://www.linkedin.com/in/youssefsala7" aria-label="LinkedIn">
+            <img src="https://sandybrown-ant-159541.hostingersite.com/wp-content/uploads/2025/08/ChatGPT-Image-Aug-3-2025-02_59_53-PM.png" alt="LinkedIn">
+          </a>
+          <a href="https://www.instagram.com/youssef.sala7" aria-label="Instagram">
+            <img src="https://sandybrown-ant-159541.hostingersite.com/wp-content/uploads/2025/08/ChatGPT-Image-Aug-3-2025-03_00_47-PM.png" alt="Instagram">
+          </a>
         </div>
       </div>
+
       <div class="social-section">
-        <div class="section-cta">Follow Our Company</div>
+        <div class="section-cta">Follow OSIRIS LABS</div>
         <div class="icons">
-          <a href="https://www.linkedin.com/company/the-osiris-labs/"><img src="https://sandybrown-ant-159541.hostingersite.com/wp-content/uploads/2025/08/ChatGPT-Image-Aug-3-2025-02_59_53-PM.png" alt="Company LinkedIn"></a>
-          <a href="https://www.instagram.com/theosirislabs/"><img src="https://sandybrown-ant-159541.hostingersite.com/wp-content/uploads/2025/08/ChatGPT-Image-Aug-3-2025-03_00_47-PM.png" alt="Company Instagram"></a>
-          <a href="https://www.theosirislabs.com/"><img src="https://sandybrown-ant-159541.hostingersite.com/wp-content/uploads/2025/08/ChatGPT-Image-Aug-3-2025-03_05_11-PM.png" alt="Website"></a>
+          <a href="https://www.linkedin.com/company/the-osiris-labs/" aria-label="Company LinkedIn">
+            <img src="https://sandybrown-ant-159541.hostingersite.com/wp-content/uploads/2025/08/ChatGPT-Image-Aug-3-2025-02_59_53-PM.png" alt="Company LinkedIn">
+          </a>
+          <a href="https://www.instagram.com/theosirislabs/" aria-label="Company Instagram">
+            <img src="https://sandybrown-ant-159541.hostingersite.com/wp-content/uploads/2025/08/ChatGPT-Image-Aug-3-2025-03_00_47-PM.png" alt="Company Instagram">
+          </a>
+          <a href="https://www.theosirislabs.com/" aria-label="Company Website">
+            <img src="https://sandybrown-ant-159541.hostingersite.com/wp-content/uploads/2025/08/ChatGPT-Image-Aug-3-2025-03_05_11-PM.png" alt="Website">
+          </a>
         </div>
       </div>
-      <div class="action-buttons">
-        <a href="mailto:youssef.sala7@gmail.com">Send Email</a>
-        <a href="https://cal.theosirislabs.com/youssef/30min">Schedule Call</a>
-        <a href="https://vcf.fyi/fd0cb7fe">Save Contact</a>
+
+      <!-- Secondary CTAs -->
+      <div class="secondary-actions">
+        <a class="btn" href="mailto:youssef@theosirislabs.com" aria-label="Send an email to Youssef">
+          <!-- Mail SVG -->
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20 4H4a2 2 0 0 0-2 2v.4l10 6 10-6V6a2 2 0 0 0-2-2Zm2 6.2-10 6-10-6V18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-7.8Z"/>
+          </svg>
+          Send Email
+        </a>
+        <a class="btn" href="https://vcf.fyi/fd0cb7fe" download="YoussefSalahEldin.vcf" aria-label="Save Youssef's contact">
+          <!-- Download SVG -->
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3a1 1 0 0 1 1 1v8.586l2.293-2.293a1 1 0 1 1 1.414 1.414l-4.007 4.007a1.5 1.5 0 0 1-2.12 0L6.573 11.707a1 1 0 1 1 1.414-1.414L10.28 12.98V4a1 1 0 0 1 1-1ZM5 19a1 1 0 1 0 0 2h14a1 1 0 1 0 0-2H5Z"/>
+          </svg>
+          Save Contact
+        </a>
       </div>
+
+      <div class="footer">Engineered to Evolve — Built to Build.</div>
     </div>
   </div>
 </body>
