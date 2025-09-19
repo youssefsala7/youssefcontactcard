@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Osiris Labs Profile Card</title>
+  <title>Osiris Labs Digital Business Card</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -17,10 +17,6 @@
       font-family: Arial, sans-serif;
       padding: 20px;
     }
-    .logo {
-      width: 80px;
-      margin-bottom: 16px;
-    }
     .outer-card {
       background-color: #d0f0fd;
       border-radius: 24px;
@@ -31,129 +27,176 @@
       align-items: center;
     }
     .card {
-      background-color: #bae6fd;
+      background: linear-gradient(to bottom, #f0faff, #bae6fd 50%, #f0faff);
       border-radius: 20px;
       width: 100%;
-      padding: 20px;
+      padding: 24px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
       display: flex;
       flex-direction: column;
-      align-items: stretch;
+      align-items: center;
     }
-    .profile-img {
-      width: 100%;
-      border-radius: 12px;
+    .header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .logo {
+      width: 80px;
       margin-bottom: 16px;
     }
-    .info { margin-bottom: 16px; text-align: center; }
-    .name-row {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-bottom: 6px;
+    .profile-img {
+      width: 140px;
+      border-radius: 50%;
+      margin-bottom: 16px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
     .name {
-      font-size: 20px;
+      font-size: 22px;
       color: #0f172a;
       font-weight: 600;
+      margin-bottom: 4px;
     }
     .title {
-      font-size: 14px;
+      font-size: 15px;
       color: #475569;
+      text-align: center;
       margin-bottom: 12px;
     }
     .description {
-      font-size: 13px;
+      font-size: 14px;
       color: #475569;
-      line-height: 1.4;
+      line-height: 1.5;
+      text-align: center;
+      margin-bottom: 24px;
+      max-width: 280px;
     }
-    .social-icons {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
+    .divider {
+      width: 100%;
+      height: 1px;
+      background-color: rgba(71, 85, 105, 0.2);
       margin: 16px 0;
     }
-    .social-icons img,
-    .follow-icons img {
-      width: 24px;
-      height: 24px;
-      border-radius: 6px;
-      object-fit: cover;
+    .skills {
+      margin-bottom: 24px;
+      width: 100%;
     }
-    .follow-cta {
-      font-size: 14px;
+    .skills-title {
+      font-size: 15px;
+      color: #0f172a;
+      font-weight: 600;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+    .skill {
+      background-color: rgba(56, 189, 248, 0.15);
+      color: #0f172a;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 500;
+    }
+    .social-section {
+      margin-bottom: 24px;
+      width: 100%;
+    }
+    .section-cta {
+      font-size: 15px;
       font-weight: 600;
       color: #0f172a;
-      margin: 8px 0;
+      margin-bottom: 12px;
       text-align: center;
     }
-    .follow-icons {
+    .icons {
       display: flex;
       justify-content: center;
-      gap: 12px;
-      margin-bottom: 16px;
+      gap: 16px;
+    }
+    .icons a {
+      display: inline-block;
+      transition: transform 0.2s;
+    }
+    .icons a:hover {
+      transform: scale(1.1);
+    }
+    .icons img {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      object-fit: cover;
     }
     .action-buttons {
-      background-color: #bae6fd;
-      border-radius: 16px;
-      padding: 10px;
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 12px;
       width: 100%;
-      margin-top: 12px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
     }
     .action-buttons a {
-      flex: 1;
       text-align: center;
-      padding: 12px 0;
+      padding: 14px 0;
       background-color: #38bdf8;
       color: #ffffff;
-      border-radius: 10px;
-      font-size: 14px;
+      border-radius: 12px;
+      font-size: 15px;
       text-decoration: none;
-      transition: background-color 0.2s;
+      transition: background-color 0.2s, box-shadow 0.2s;
     }
     .action-buttons a:hover {
       background-color: #0ea5e9;
+      box-shadow: 0 2px 8px rgba(14, 165, 233, 0.3);
     }
   </style>
 </head>
 <body>
-  <!-- Floating logo -->
-  <img src="https://sandybrown-ant-159541.hostingersite.com/wp-content/uploads/2025/09/SVG-to-PNG-Asset-9.png" alt="Osiris Labs Logo" class="logo">
-
   <div class="outer-card">
     <div class="card">
-      <img src="https://sandybrown-ant-159541.hostingersite.com/wp-content/uploads/2025/09/Profile-Picture-Preview.jpg" alt="Profile" class="profile-img">
-      <div class="info">
-        <div class="name-row">
-          <div class="name">Youssef SalahEldin</div>
+      <div class="header">
+        <img src="https://sandybrown-ant-159541.hostingersite.com/wp-content/uploads/2025/09/SVG-to-PNG-Asset-9.png" alt="Osiris Labs Logo" class="logo">
+        <img src="https://sandybrown-ant-159541.hostingersite.com/wp-content/uploads/2025/09/Profile-Picture-Preview.jpg" alt="Profile" class="profile-img">
+        <div class="name">Youssef SalahEldin</div>
+        <div class="title">CEO & Marketing Director of The Osiris Labs</div>
+      </div>
+      <div class="description">
+        Visionary leader with over a decade of expertise in developing AI-integrated marketing frameworks that drive measurable, long-term business expansion through innovative digital, offline, and experiential strategies.
+      </div>
+      <div class="divider"></div>
+      <div class="skills">
+        <div class="skills-title">Core Competencies</div>
+        <div class="skills-list">
+          <div class="skill">AI Automation</div>
+          <div class="skill">Strategic Branding</div>
+          <div class="skill">Content Optimization</div>
+          <div class="skill">CRM Solutions</div>
+          <div class="skill">Event Design</div>
         </div>
-        <div class="title">Co-Founder, Marketing Director &amp; AI Automations Specialist</div>
-        <div class="description">
-          10+ years of experience building systems-first marketing strategies across digital, offline, and experiential.
+      </div>
+      <div class="divider"></div>
+      <div class="social-section">
+        <div class="section-cta">Connect Personally</div>
+        <div class="icons">
+          <a href="https://www.linkedin.com/in/youssefsala7"><img src="https://sandybrown-ant-159541.hostingersite.com/wp-content/uploads/2025/08/ChatGPT-Image-Aug-3-2025-02_59_53-PM.png" alt="LinkedIn"></a>
+          <a href="https://www.instagram.com/youssef.sala7"><img src="https://sandybrown-ant-159541.hostingersite.com/wp-content/uploads/2025/08/ChatGPT-Image-Aug-3-2025-03_00_47-PM.png" alt="Instagram"></a>
+          <a href="https://cal.theosirislabs.com/youssef/30min"><img src="https://sandybrown-ant-159541.hostingersite.com/wp-content/uploads/2025/08/ChatGPT-Image-Aug-3-2025-03_40_54-PM.png" alt="Schedule Meeting"></a>
         </div>
       </div>
-
-      <div class="social-icons">
-        <a href="#"><img src="https://sandybrown-ant-159541.hostingersite.com/wp-content/uploads/2025/08/ChatGPT-Image-Aug-3-2025-03_00_47-PM.png" alt="LinkedIn"></a>
-        <a href="#"><img src="https://sandybrown-ant-159541.hostingersite.com/wp-content/uploads/2025/08/ChatGPT-Image-Aug-3-2025-03_42_00-PM.png" alt="Behance"></a>
-        <a href="https://cal.theosirislabs.com/youssef/30min"><img src="https://sandybrown-ant-159541.hostingersite.com/wp-content/uploads/2025/08/ChatGPT-Image-Aug-3-2025-03_40_54-PM.png" alt="Schedule Meeting"></a>
+      <div class="social-section">
+        <div class="section-cta">Follow Our Company</div>
+        <div class="icons">
+          <a href="https://www.linkedin.com/company/the-osiris-labs/"><img src="https://sandybrown-ant-159541.hostingersite.com/wp-content/uploads/2025/08/ChatGPT-Image-Aug-3-2025-02_59_53-PM.png" alt="Company LinkedIn"></a>
+          <a href="https://www.instagram.com/theosirislabs/"><img src="https://sandybrown-ant-159541.hostingersite.com/wp-content/uploads/2025/08/ChatGPT-Image-Aug-3-2025-03_00_47-PM.png" alt="Company Instagram"></a>
+          <a href="https://www.theosirislabs.com/"><img src="https://sandybrown-ant-159541.hostingersite.com/wp-content/uploads/2025/08/ChatGPT-Image-Aug-3-2025-03_05_11-PM.png" alt="Website"></a>
+        </div>
       </div>
-
-      <div class="follow-cta">Follow Our Company</div>
-      <div class="follow-icons">
-        <a href="https://www.linkedin.com/company/theosirislabs/?_l=en_US"><img src="https://sandybrown-ant-159541.hostingersite.com/wp-content/uploads/2025/08/ChatGPT-Image-Aug-3-2025-02_59_53-PM.png" alt="LinkedIn"></a>
-        <a href="https://www.instagram.com/theosirislabs/"><img src="https://sandybrown-ant-159541.hostingersite.com/wp-content/uploads/2025/08/ChatGPT-Image-Aug-3-2025-03_00_47-PM.png" alt="Instagram"></a>
-        <a href="https://www.theosirislabs.com/"><img src="https://sandybrown-ant-159541.hostingersite.com/wp-content/uploads/2025/08/ChatGPT-Image-Aug-3-2025-03_05_11-PM.png" alt="Website"></a>
-      </div>
-
-      <!-- Unified action buttons inside styled container -->
       <div class="action-buttons">
-        <a href="mailto:youssef.sala7@gmail.com">Email</a>
-        <a href="https://cal.theosirislabs.com/youssef/30min">Book a Call</a>
+        <a href="mailto:youssef.sala7@gmail.com">Send Email</a>
+        <a href="https://cal.theosirislabs.com/youssef/30min">Schedule Call</a>
         <a href="https://vcf.fyi/fd0cb7fe">Save Contact</a>
       </div>
     </div>
